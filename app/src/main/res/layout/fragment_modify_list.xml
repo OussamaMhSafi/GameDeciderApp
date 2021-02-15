@@ -10,9 +10,9 @@
     android:orientation="vertical"
     tools:context=".ModifyListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <fragment
+        android:id="@+id/list_fragment"
         android:name="com.example.randomgamedecider.ListFragment"
         android:layout_width="403dp"
         android:layout_height="338dp"
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Instantiatable" />
+        tools:ignore="FragmentTagUsage,Instantiatable" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -32,18 +32,22 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <fragment
+            android:id="@+id/detail_fragment"
             android:name="com.example.randomgamedecider.DetailFragment"
             android:layout_width="match_parent"
             android:layout_height="138dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="FragmentTagUsage" />
 
         <fragment
+            android:id="@+id/add_game_fragment"
             android:name="com.example.randomgamedecider.AddGameFragment"
             android:layout_width="match_parent"
             android:layout_height="282dp"
             android:layout_weight="1"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="306dp" />
+            tools:layout_editor_absoluteY="306dp"
+            tools:ignore="FragmentTagUsage" />
 
     </LinearLayout>
 

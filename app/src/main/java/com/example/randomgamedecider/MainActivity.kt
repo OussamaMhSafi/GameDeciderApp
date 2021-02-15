@@ -1,28 +1,39 @@
 package com.example.randomgamedecider
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.randomgamedecider.databinding.ActivityMainBinding
+import com.google.gson.Gson
+import org.json.JSONArray
+import org.json.JSONObject
 import java.util.*
 
+
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
 
-        //setContentView(R.layout.activity_main)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(
+            this,
+            R.layout.activity_main
+        )
 
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
-        setContentView(binding.root)
+        binding.addBtn.setOnClickListener {
+
+            val intent= Intent(this, ModifyListActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        binding.root
 
     }
-
 
 }

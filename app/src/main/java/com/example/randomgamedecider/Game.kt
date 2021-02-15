@@ -5,12 +5,13 @@ import android.widget.ImageView
 
 class Game() {
 
-    var gameImage:ImageView
+
+    var imageResource:Int
     get(){
-        return gameImage
+        return imageResource
     }
         set(value) {
-            gameImage=value
+            imageResource=value
         }
 
     var title: String
@@ -30,10 +31,10 @@ class Game() {
             genre = value
         }
 
-    constructor(title:String, genre:String, gameImage: ImageView){
+    constructor(title:String, genre:String, imageResource: Int) : this() {
         this.title=title
         this.genre=genre
-        this.gameImage=gameImage
+        this.imageResource=imageResource
     }
 
 }
