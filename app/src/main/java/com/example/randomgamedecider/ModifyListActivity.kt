@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.randomgamedecider.databinding.ActivityModifyListBinding
+import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
@@ -21,8 +22,8 @@ class ModifyListActivity : AppCompatActivity() {
     private var mAdapter: RecyclerView.Adapter<*>? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null
     private var addBtn: Button? = null
-    private var genreEditText: EditText? = null
-    private var titleEditText: EditText? = null
+    private var genreEditText: TextInputEditText? = null
+    private var titleEditText: TextInputEditText? = null
     private lateinit var gameSingleton:GameSingleton
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,8 +54,8 @@ class ModifyListActivity : AppCompatActivity() {
             saveData()
 
             insertItem(
-                titleEditText.toString(),
-                genreEditText.toString(),
+                titleEditText!!.text.toString(),
+                genreEditText!!.text.toString(),
                 R.mipmap.ic_launcher_round
             )
         }
